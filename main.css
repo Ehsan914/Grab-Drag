@@ -1,0 +1,97 @@
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.2);
+    --glass-bg-hover: rgba(255, 255, 255, 0.3);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --glass-blur: 10px;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    background-image: url('https://images.unsplash.com/photo-1526080676457-4544bf0ebba9');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow-y: hidden;
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    font-family: 'Lato';
+}
+
+.shadow {
+    background-color: rgba(0, 0, 0, .3);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    white-space: nowrap;
+    z-index: -1;
+}
+
+.sliders {
+    display: flex;
+    overflow-x: scroll;
+    cursor: grab;
+    scroll-margin: 0;
+    position: relative;
+    gap: 30px;
+    padding: 150px 70px;
+    max-width: 1700px;
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    border-radius: 12px;
+    border: 2px solid var(--glass-border);
+    margin: 0px 30px;
+}
+
+.sliders.active {
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+    background-color: var(--glass-bg-hover);
+}
+
+.sliders::-webkit-scrollbar {
+    display: none;
+}
+
+.sliders {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.slider {
+    font-size: 30px;
+    background-color: black;
+    color: white;
+    min-width: 400px;
+    height: 350px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scrollbar-track {
+    width: 100%;
+    height: 10px;
+    background: #ddd;
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    border-radius: 5px;
+}
+
+.scrollbar-thumb {
+    height: 10px;
+    background: #888;
+    position: absolute;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.scrollbar-thumb:hover {
+    background: #555;
+}
